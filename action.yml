@@ -1,0 +1,24 @@
+name: '@i40mc/sentry-release-cleanup-action'
+description: 'This action cleans up old image tags in an Azure Container Registry'
+author: 'scomans'
+inputs:
+  keep:
+    required: false
+    description: 'Amount of releases to keep'
+    default: '3'
+  organization:
+    required: true
+    description: 'Organization slug or id'
+  project:
+    required: true
+    description: 'Project slug or id'
+  token:
+    required: true
+    description: 'Auth token for Sentry (required scopes: project:releases)'
+  dryRun:
+    required: false
+    description: 'Dry run (no releases will be deleted)'
+
+runs:
+  using: 'node24'
+  main: 'dist/index.js'
