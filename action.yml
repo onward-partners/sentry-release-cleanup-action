@@ -14,7 +14,7 @@ inputs:
     description: 'Project slug or id'
   token:
     required: true
-    description: 'Auth token for Sentry (required scopes: project:releases)'
+    description: 'Auth token for Sentry (required scopes: project:read, project:releases)'
   dryRun:
     required: false
     description: 'Dry run (no releases will be deleted)'
